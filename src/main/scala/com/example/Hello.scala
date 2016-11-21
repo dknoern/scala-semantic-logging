@@ -8,11 +8,20 @@ object Hello {
 
     val logger = Logger("name")
 
-    // create SplunkCimLogEvent and populate some fields!
+    // create SplunkCimLogEvent, identify event type
 
-    var event = new SplunkCimLogEvent("name", "event-id")
+    var event = new SplunkCimLogEvent("name", "beverage-purchase")
+
+    // populate relevant standard splunk-specific fields
+
 		event.setAuthAction("allow")
 		event.setFileModifyTime(System.currentTimeMillis())
+
+    // populate other semantic fields
+
+    event.addField("beverage", "americano")
+    event.addField("size", "tall")
+    event.addField("room", "extra")
 
     // log it
 
