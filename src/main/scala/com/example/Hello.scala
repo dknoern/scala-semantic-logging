@@ -14,8 +14,8 @@ object Hello {
 
     // populate relevant standard splunk-specific fields
 
-		event.setAuthAction("allow")
-		event.setFileModifyTime(System.currentTimeMillis())
+    event.setAuthAction("allow")
+    event.setFileModifyTime(System.currentTimeMillis())
 
     // populate other semantic fields
 
